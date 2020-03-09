@@ -1,15 +1,13 @@
 clear; clc; close all;
-load data\FullFlex_Julia_Leads.csv
-X = FullFlex_Julia_Leads;
+load data\Emma_EMG_ChestFlex_Leads.csv
+X = Emma_EMG_ChestFlex_Leads;
 
 fs = 512; % Sampling rate
-N=length(FullFlex_Julia_Leads); 
+N=length(X); 
 t=0:1/fs:(N-1)/fs; % time line for plotting
 
 figure (1)
-plot(t, X(:,1))
-hold on
-plot(t, X(:,2))
+plot(t, X)
 
 
 %% 
