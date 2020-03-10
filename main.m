@@ -122,7 +122,7 @@ XReconstruct = (WInvReconstruct * Zhat)';
 plot3ch(XReconstruct)
 %%
 % Matlabs ICA*
-Wrica = rica(X,3);
+Wrica = rica(X,3); %rica(data,2)
 Zhatrica = transform(Wrica,X);
 
 plot3ch(Zhatrica)
