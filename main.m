@@ -60,7 +60,15 @@ kurtosis(noise1)
 %3)
 %%
 % Filtering with PCA (Here all signals are mixed in X)
-load X.dat
+
+addpath('lab5files/matlab');
+
+load lab5files/data/X.dat
+
+fs = 256; % Sampling rate
+N=length(X); 
+t=0:1/fs:(N-1)/fs; % time line for plotting
+
 plot3ch(X)
 
 [U,S,V] = svd(X);
@@ -89,7 +97,7 @@ SForReconstruct(3,3)=0;
 
 YReconstruct = U*SForReconstruct*V';
 
-plot3ch(YReconstruct)
+plot(YReconstruct)
 %%
 % Using ICA
 [W, Zhat] = ica(X');
