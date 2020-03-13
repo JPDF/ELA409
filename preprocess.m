@@ -23,5 +23,9 @@ newData = filtfilt(b, a, newData);
 % Low pass filter
 newData = lowpass(newData, 100, fs, 'ImpulseResponse', 'iir', 'Steepness', 0.95);
 
+one = ones(1,5);
+h = (1/5).*one; 
+newData(:,1)=conv(newData(:,1), h, 'same');
+
 end
 
