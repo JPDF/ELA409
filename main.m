@@ -70,7 +70,7 @@ N=length(X);
 t=0:1/fs:(N-1)/fs; % time line for plotting
 
 plot3ch(X)
-
+kurtosis(X)
 [U,S,V] = svd(X);
 
 
